@@ -18,8 +18,11 @@ Clone the SalesGPT Github repository:
 Navigate to the repository and in case you used a different venv name rename the VENV variable in the Makefile: 
 
 `cd SalesGPT`
+
 `pip install salesgpt`
+
 `make setup`
+
 `python run_api.py`
 
 To deactivate a virtual environment after you have stopped using it simply run: `deactivate`
