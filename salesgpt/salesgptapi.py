@@ -17,7 +17,11 @@ class SalesGPTAPI:
         self.config_path = config_path
         self.verbose = verbose
         self.max_num_turns = max_num_turns
-        self.llm = ChatLiteLLM(temperature=0.2, model_name=GPT_MODEL)
+        # self.llm = ChatLiteLLM(temperature=0.2, model_name=GPT_MODEL)
+        self.llm = ChatLiteLLM(
+            model="ollama/openchat",
+            api_base="http://localhost:11434",
+        )
 
     def do(self, conversation_history: [str], human_input=None):
         if self.config_path == "":
