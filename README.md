@@ -7,7 +7,7 @@
 # Setup Sales GPT
 
 - Open Terminal.
-- Navigate to your project directory: `mkdir salesAgent && cd salesAgent`
+- Navigate to your empty project directory: `mkdir salesAgent && cd salesAgent`
 - Create a virtual environment: `python3 -m venv env`
 - Activate the virtual environment: `source env/bin/activate`
 
