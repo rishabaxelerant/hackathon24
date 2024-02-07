@@ -95,7 +95,7 @@ class GPT4AllChatBot:
             'conversation_history': conversation_history,
         }
 
-        conversation_history.append("User: " + input_words)
+        conversation_history.append("User: " + input_words + "<END_OF_TURN>")
 
         response = requests.post('http://127.0.0.1:8000/chat', headers=headers, json=json_data)
         print(input_words)
