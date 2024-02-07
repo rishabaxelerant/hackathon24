@@ -23,7 +23,15 @@ Navigate to the repository and in case you used a different venv name rename the
 
 `make setup`
 
-`cp .env-example .env`
+Create .env file with following values
+OPENAI_API_KEY="xx"
+OTHER_API_KEY="yy"
+
+```
+cat > .env
+OPENAI_API_KEY="xx"
+OTHER_API_KEY="yy"
+```
 
 `python run_api.py`
 
