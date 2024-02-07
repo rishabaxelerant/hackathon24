@@ -23,8 +23,14 @@ Navigate to the repository and in case you used a different venv name rename the
 
 `make setup`
 
+`cp .env-example .env`
+
 `python run_api.py`
 
 To deactivate a virtual environment after you have stopped using it simply run: `deactivate`
 
 
+
+
+
+# Setup Sales Calling GPT
