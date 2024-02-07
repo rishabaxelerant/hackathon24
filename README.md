@@ -17,7 +17,7 @@ Clone the SalesGPT Github repository:
 
 Navigate to the repository and in case you used a different venv name rename the VENV variable in the Makefile: 
 
-`cd SalesGPT`
+`cd hackathon24`
 
 `pip install salesgpt`
 
