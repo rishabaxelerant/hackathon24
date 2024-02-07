@@ -45,7 +45,7 @@ To deactivate a virtual environment after you have stopped using it simply run: 
 - Go to the sales takk gpt folder: `cd salestakgpt`
 - Install Requirements: 
     ```
-    pip install -r requirement.txt
+    pip install -r requirements.txt
     brew install portaudio19-dev python-pyaudio
     brew install portaudio
     pip install pyaudio     
