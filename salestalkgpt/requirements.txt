@@ -1,0 +1,7 @@
+wheel
+gpt4all
+openai-whisper
+playsound
+SpeechRecognition
+TTS
+pyudio
