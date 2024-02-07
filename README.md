@@ -35,4 +35,11 @@ To deactivate a virtual environment after you have stopped using it simply run: 
 - Create a virtual environment: `python3 -m venv env`
 - Activate the virtual environment: `source env/bin/activate`
 - Go to the sales takk gpt folder: `cd salestakgpt`
+- Install Requirements: 
+    ```
+    pip install -r requirement.txt
+    brew install portaudio19-dev python-pyaudio
+    brew install portaudio
+    pip install pyaudio     
+    ```
 - Run talking Agent: `python chat.py`
