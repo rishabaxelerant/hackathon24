@@ -4,4 +4,3 @@ openai-whisper
 playsound
 SpeechRecognition
 TTS
-pyudio
