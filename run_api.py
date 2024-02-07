@@ -44,5 +44,5 @@ def _set_env():
 
 
 if __name__ == "__main__":
-    _set_env()
+    # _set_env()
     uvicorn.run(app, host="127.0.0.1", port=8000)
