@@ -38,7 +38,7 @@ class GPT4AllChatBot:
         """Run the listen-think-response loop"""
         input_words = self._voice_to_text()
         answer = self.calltoSalesGPT(input_words)
-        print(answer)
+        # print(answer)
         # exit()
         # answer = self.run_gpt(input_words)
         self._text_to_voice(answer)
@@ -102,7 +102,7 @@ class GPT4AllChatBot:
         data = response.json()
         conversation_history.append(data["name"] + ": " + data["say"])
         answer = data["say"].replace('<END_OF_TURN>', '')
-        print(conversation_history)
+        # print(conversation_history)
         return answer
         
 

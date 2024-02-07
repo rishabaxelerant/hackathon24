@@ -47,7 +47,8 @@ To deactivate a virtual environment after you have stopped using it simply run: 
     ```
     brew install portaudio19-dev python-pyaudio
     brew install portaudio
-    pip install pyaudio    
+    pip install pyaudio
+    pip3 install PyObjC    
     pip install -r requirements.txt 
     ```
 - Run talking Agent: `python chat.py`
