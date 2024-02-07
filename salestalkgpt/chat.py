@@ -13,7 +13,7 @@ conversation_history = []
 
 class GlowTTS:
     def __init__(self):
-        self.tts = TTS(model_name="tts_models/en/ljspeech/glow-tts", progress_bar=False)
+        self.tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DCA", progress_bar=False)
 
     def process(self, text, audio_save_path):
         return self.tts.tts_to_file(text=text, file_path=audio_save_path)
@@ -22,7 +22,7 @@ class GlowTTS:
 class GPT4AllChatBot:
     """Voice chat bot based on Whisper and GPT4All"""
 
-    def __init__(self, gpt_model_name, whisper_model_type, tts_rate=165):
+    def __init__(self, gpt_model_name, whisper_model_type, tts_rate=200):
         print(f"==> GPT4All model: {gpt_model_name}, Whisper model: {whisper_model_type}")
         self.gpt_model = GPT4All(gpt_model_name, allow_download=True)
 
@@ -37,11 +37,14 @@ class GPT4AllChatBot:
         global conversation_history
         """Run the listen-think-response loop"""
         input_words = self._voice_to_text()
-        answer = self.calltoSalesGPT(input_words)
-        # print(answer)
-        # exit()
-        # answer = self.run_gpt(input_words)
-        self._text_to_voice(answer)
+        if input_words:
+            answer = self.calltoSalesGPT(input_words)
+            # print(answer)
+            # exit()
+            # answer = self.run_gpt(input_words)
+            self._text_to_voice(answer)
+        else:
+            print("Empty String Not able to listen")
 
     def _voice_to_text(self):
         """Listen voice and convert voice to text using OpenAI Whisper"""
@@ -95,15 +98,18 @@ class GPT4AllChatBot:
             'conversation_history': conversation_history,
         }
 
-        conversation_history.append("User: " + input_words + "<END_OF_TURN>")
-
+        conversation_history.append("User: " + input_words + " <END_OF_TURN>")
+        # print(json_data)
         response = requests.post('http://127.0.0.1:8000/chat', headers=headers, json=json_data)
         print(input_words)
-        data = response.json()
-        conversation_history.append(data["name"] + ": " + data["say"])
-        answer = data["say"].replace('<END_OF_TURN>', '')
+        try:
+            data = response.json()
+            conversation_history.append(data["name"] + ": " + data["say"])
+            answer = data["say"].replace('<END_OF_TURN>', '')
+            return answer
+        except:
+            print("Error While Calling FAST API")
         # print(conversation_history)
-        return answer
         
 
 if __name__ == "__main__":
