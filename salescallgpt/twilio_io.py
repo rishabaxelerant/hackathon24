@@ -35,16 +35,10 @@ class TwilioServer:
         self.server_thread = threading.Thread(target=self._start)
         self.on_session = None
 
-        # account_sid = os.environ["TWILIO_ACCOUNT_SID"]
-        # auth_token = os.environ["TWILIO_AUTH_TOKEN"]
-        # self.from_phone = os.environ["TWILIO_PHONE_NUMBER"]
-        account_sid = "AC9a5f3b6c43f2974d3f8021d42282456a"
-        auth_token = "730eca4ba9c87d7463819718263ddb46"
-        self.from_phone = "+16593336734"
+        account_sid = os.environ["TWILIO_ACCOUNT_SID"]
+        auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+        self.from_phone = os.environ["TWILIO_PHONE_NUMBER"]
         self.client = Client(account_sid, auth_token)
-        # ACdf316ffc4be3b3871d7a9f18af431457
-        #  2a300aad8a9fa2d579cab768f426858b
-        # +16593336734
 
         @self.app.route("/audio/<key>")
         def audio(key):
