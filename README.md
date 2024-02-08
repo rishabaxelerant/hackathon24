@@ -1,3 +1,6 @@
+Inspired from https://github.com/filip-michalsky/SalesGPT?
+
+
 #### For Mac:
 
 ## Setup Ollama
