@@ -67,4 +67,4 @@ TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
 ```
-- From porject root run: `python call_gpt.py --preload_whisper --start_ngrok` 
+- From project root run: `python call_gpt.py --preload_whisper --start_ngrok --number "+918277XXXXXX"` 
