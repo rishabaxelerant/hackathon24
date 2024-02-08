@@ -38,7 +38,7 @@ OTHER_API_KEY="yy"
 To deactivate a virtual environment after you have stopped using it simply run: `deactivate`
 
 
-# Setup Sales Calling GPT
+# Setup Sales Talking GPT
 
 - Create a virtual environment: `python3 -m venv env`
 - Activate the virtual environment: `source env/bin/activate`
@@ -52,3 +52,18 @@ To deactivate a virtual environment after you have stopped using it simply run: 
     pip install -r requirements.txt 
     ```
 - Run talking Agent: `python chat.py`
+
+
+# Setup Sales Calling GPT
+
+- Install requriements: `cd salescallgpt && pip install -r requirements.txt`
+- Add Additional tools: `brew install ffmpeg`
+- Setup Twilio Account
+- Setup Ngrok Account & local setup
+- Add environment varaibles:
+```
+Environment Variables
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_PHONE_NUMBER=
+```
