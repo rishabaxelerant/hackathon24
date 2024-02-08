@@ -29,7 +29,7 @@ if __name__ == "__main__":
         "--max_num_turns",
         type=int,
         help="Maximum number of turns in the sales conversation",
-        default=10,
+        default=100,
     )
 
     # Parse arguments
