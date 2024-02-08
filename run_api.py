@@ -3,6 +3,7 @@ from typing import List
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from salesgpt.salesgptapi import SalesGPTAPI
@@ -12,6 +13,13 @@ app = FastAPI()
 GPT_MODEL = "gpt-3.5-turbo-0613"
 # GPT_MODEL_16K = "gpt-3.5-turbo-16k-0613"
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def say_hello():
