@@ -198,3 +198,10 @@ internal/*
 wandb
 depot/*
 litellm_uuid.txt
+
+# ignore node modules
+frontend/node_modules/*
+
+#  python environment
+envserver/*
+envclientcall/*

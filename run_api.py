@@ -26,7 +26,7 @@ class MessageList(BaseModel):
 @app.post("/chat")
 async def chat_with_sales_agent(req: MessageList):
     sales_api = SalesGPTAPI(
-        config_path="examples/example_agent_setup.json", verbose=True
+        config_path="training/axl_agent_setup.json", verbose=True
     )
     name, reply = sales_api.do(req.conversation_history, req.human_say)
     res = {"name": name, "say": reply}
@@ -44,5 +44,5 @@ def _set_env():
 
 
 if __name__ == "__main__":
-    _set_env()
+    # _set_env()
     uvicorn.run(app, host="127.0.0.1", port=8000)
