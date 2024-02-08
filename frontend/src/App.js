@@ -27,16 +27,18 @@ function App() {
         data: {'human_say': message, 'conversation_history': conversation.current}
       });
       console.log('response', response);
-      const {name, say} = response;
+      const {name, say} = response.data;
       const user_message = "User: " + message + "<END_OF_TURN>";
       const bot_reply = name + ": " + say;
       conversation.current.push(user_message);
       conversation.current.push(bot_reply);
-      setChat([...chat, {
-        message: bot_reply,
-        sentTime: "just now",
-        sender: name,
-      }])
+      setChat( (c) => {
+        return [...c, {
+          message: bot_reply,
+          sentTime: "just now",
+          sender: name,
+        }]
+      })
     }catch (e){
       console.log('err', e)
     }
