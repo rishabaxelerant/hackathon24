@@ -13,6 +13,8 @@ from salescallgpt.twilio_io import TwilioServer
 from salescallgpt.conversation import run_conversation
 from pyngrok import ngrok
 
+from dotenv import load_dotenv
+load_dotenv()
 
 def main(port, remote_host, start_ngrok):
     if start_ngrok:

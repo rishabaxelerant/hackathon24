@@ -7,13 +7,12 @@
 # Setup Sales GPT
 
 - Open Terminal.
-- Navigate to your empty project directory: `mkdir salesAgent && cd salesAgent`
-- Create a virtual environment: `python3 -m venv env`
-- Activate the virtual environment: `source env/bin/activate`
+- Navigate to your empty project directory: `git clone https://github.com/rishabaxelerant/hackathon24.git`
+- Create a virtual environment inside project root: `python3 -m venv envserver`
+- Activate the virtual environment: `source envserver/bin/activate`
 
 Clone the SalesGPT Github repository: 
 
-`git clone https://github.com/rishabaxelerant/hackathon24.git`
 
 Navigate to the repository and in case you used a different venv name rename the VENV variable in the Makefile: 
 
@@ -40,9 +39,9 @@ To deactivate a virtual environment after you have stopped using it simply run: 
 
 # Setup Sales Talking GPT
 
-- Create a virtual environment: `python3 -m venv env`
-- Activate the virtual environment: `source env/bin/activate`
-- Go to the sales takk gpt folder: `cd salestakgpt`
+- Create a virtual environment inside project root: `python3 -m venv envclientcall`
+- Activate the virtual environment: `source envclientcall/bin/activate`
+- Go to the sales takk gpt folder: `cd salestalkgpt`
 - Install Requirements: 
     ```
     brew install portaudio19-dev python-pyaudio
@@ -58,6 +57,7 @@ To deactivate a virtual environment after you have stopped using it simply run: 
 
 - Install requriements: `cd salescallgpt && pip install -r requirements.txt`
 - Add Additional tools: `brew install ffmpeg`
+- Install whisperAI: `pip install git+https://github.com/openai/whisper.git`
 - Setup Twilio Account
 - Setup Ngrok Account & local setup
 - Add environment varaibles:
@@ -67,3 +67,4 @@ TWILIO_ACCOUNT_SID=
 TWILIO_AUTH_TOKEN=
 TWILIO_PHONE_NUMBER=
 ```
+- From porject root run: `python call_gpt.py --preload_whisper --start_ngrok` 
