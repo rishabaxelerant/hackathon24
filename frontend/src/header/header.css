@@ -1,0 +1,70 @@
+.header__wrapper {
+  padding: 10px 20px;
+  border-bottom: 1px solid #fc4c02;
+}
+
+.header__container {
+  max-width: 1170px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact__cta-button {
+  background: #fc4c02;
+  border: 1px solid #c93100;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: .9;
+  padding: 13px 18px 12px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .5s;
+}
+
+.contact__cta-button:hover {
+  background: #fff;
+  border-color: #c93100;
+  color: #fc4c02;
+}
+
+.contact__cta-button:hover::after {
+  content: none;
+}
+
+.contact__cta-button::after {
+  background: transparent;
+  border: 1px solid #000;
+  content: "";
+  height: 100%;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  transition: all .5s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.header__container svg {
+  max-width: 130px;
+  height: auto;
+  width: 100%;
+}
+
+.page__title {
+  max-width: 1210px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .page__title {
+    letter-spacing: 2px;
+    font-size: 50px;
+  }
+}
